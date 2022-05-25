@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+ <title>خانه</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <br><h1>لیست نمرات</h1><hr>
+    <div class="row">
+        {% for c in object_list %}
+        <div class="col-4">
+            <div class="card text-center text-black bg-white mb-3 p-1">
+				<div class="card-body">
+					<div class="mb-3">
+					</div>
+				  <h5 class="card-title">اسم درس: {{c.name}}</h5>
+				  <p class="card-text text-muted">اسم دانشگاه: {{c.uni_name}}</p>
+                  <p class="card-text text-muted">روز: {{c.date}}</p>
+                  <p class="card-text text-muted">ساعت: {{c.time}}</p>
+                  <div class="text-dark text-md-center">
+                    <a href="{% url 'student-number:number' c.slug c.name %}" class="btn btn-primary">بازید رزومه</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

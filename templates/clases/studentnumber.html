@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+<title>لیست نمرات</title>
+{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="card">
+    <div class="card-header">
+    <h3 class="card-title">لیست نمرات</h3>
+    <div class="card-tools">
+    </div>
+    </div>
+    </div>
+    
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+            <thead>
+                <tr>
+                    <th>نام</th>
+                    <th>نمره</th>
+                    <th>توضیحات</th>
+                </tr>
+            </thead>
+            {% for c in object_list %}
+    <tbody>
+    <tr>
+    <td>{{c.student_name}}</td>
+    <td><span class="tag tag-success">{{c.student_number}}</span></td>
+    <td>{{c.info}}</td>
+    </tr>
+
+</tbody>
+{% endfor %}
+    </table>
+    </div>
+    
+</div>
+<br><br>
+{% endblock %}
