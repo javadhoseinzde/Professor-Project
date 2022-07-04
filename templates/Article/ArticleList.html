@@ -6,21 +6,17 @@
     <div class="row">
         {% for a in object_list %}
         <div class="col-md-4">
-<div class="card mb-3" style="max-width: 320px;">
-    <div class="row g-0">
-
-      <div class="col-md-8">
+<div class="card mb-3" style="max-width:auto; max-height: 250px;">
         <div class="card-body">
           <h5 class="card-title">{{ a.title }}</h5>
           <p class="card-text">{{ a.description|truncatewords:15 }}</p>
-          <div class="text-dark text-md-start">
+          <div class="text-dark text-md-center">
             <a href="{% url 'Article:ArticleDetail' a.slug %}" class="btn btn-info">بازید مقاله</a>
         </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 {% endfor %}
 </div>
   </div>
